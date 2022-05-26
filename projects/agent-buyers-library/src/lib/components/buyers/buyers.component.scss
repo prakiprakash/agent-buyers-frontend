@@ -1,0 +1,32 @@
+.buyer-cards-section {
+  padding: 0 16px;
+  border: solid 1px #cecece;
+  border-radius: 8px;
+  margin: 1rem;
+
+  .searchResults-header-row {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 36px 0;
+
+    .searchResults-header-count {
+      display: flex;
+      mat-icon {
+        color: #cecece;
+      }
+      h3 {
+        margin: 0;
+        // font-weight: 700;
+      }
+    }
+    & > .searchResults-layout {
+      margin-left: auto;
+      mat-icon {
+        color: #cecece;
+        &.ae-addcircle-icon {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+}

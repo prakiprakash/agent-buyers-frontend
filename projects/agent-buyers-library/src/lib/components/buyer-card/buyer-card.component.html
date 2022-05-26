@@ -1,0 +1,105 @@
+<div class="card-container">
+  <div class="card-layout">
+    <mat-card
+      tabindex="0"
+      role="button"
+      *ngFor="let buyer of cardArray | slice: (page - 1) * limit:page * limit"
+      (keydown.enter)="keyboardEnter($event)"
+    >
+      <div class="card-content">
+        <h5 class="mat-card-title position-relative">
+          <span class="status">
+            <span class="status-pending"></span>
+            {{ buyer.buyerStatus }}
+          </span>
+        </h5>
+        <div class="buyer-name margin-b8 buyer-details margin-l6">
+          {{ buyer.buyerName }}
+        </div>
+        <div class="buyer-price buyer-details margin-l6">
+          {{ buyer.buyerPrice }}
+        </div>
+        <div class="buyer-name margin-b5 buyer-details margin-l6">
+          {{ buyer.buyerAddress1 }}
+        </div>
+        <div class="buyer-name margin-b5 buyer-details margin-l6">
+          Address Line 2
+        </div>
+        <div class="buyer-name margin-b14 buyer-details margin-l6">
+          {{ buyer.buyerAddress2 }}
+        </div>
+        <div class="buyer-details">
+          <a
+            mat-stroked-button
+            color="primary"
+            class="buyer-call margin-b8"
+            target="_blank"
+            (click)="$event.stopPropagation()"
+            (keydown.enter)="$event.stopPropagation()"
+          >
+            <!-- <i class="far fa-envelope"></i> -->
+            <mat-icon> call</mat-icon><span class="label"> Call</span>
+          </a>
+          <a
+            mat-stroked-button
+            color="primary"
+            class="buyer-mail margin-b8 margin-l8"
+            target="_blank"
+            (click)="$event.stopPropagation()"
+            (keydown.enter)="$event.stopPropagation()"
+          >
+            <!-- <i class="far fa-envelope"></i> -->
+            <mat-icon> mail_outline </mat-icon><span class="label">Email </span>
+          </a>
+        </div>
+        <div class="buyer-details">
+          <a
+            mat-stroked-button
+            color="primary"
+            class="buyer-showings-section margin-b10"
+            target="_blank"
+            (click)="$event.stopPropagation()"
+            (keydown.enter)="$event.stopPropagation()"
+          >
+            <mat-icon>calendar_today </mat-icon>
+            <span class="label">Showings </span>
+            <!-- <div class="buyer-showings">Showings</div> -->
+          </a>
+          <a
+            mat-stroked-button
+            color="primary"
+            class="buyer-matches-sections margin-l8 margin-b10"
+            target="_blank"
+            (click)="$event.stopPropagation()"
+            (keydown.enter)="$event.stopPropagation()"
+          >
+            <!-- <i class="far fa-envelope"></i> -->
+            <span
+              id="mat-badge-content-3"
+              class="mat-badge-content mat-badge-active"
+              >1</span
+            >
+            <!-- <div class="buyer-matches">Matches</div> -->
+            <span class="label"> &nbsp; Matches </span>
+          </a>
+        </div>
+        <div class="buyer-checklist mat-button">
+          <mat-icon>assignment_turned_in</mat-icon>
+          <span class="mx-2">CHECKLIST</span>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+  <div class="searchResults-header-row">
+    <div class="searchResults-layout actionLayout">
+      <mat-card-actions class="actionLayout">
+        <button mat-button>
+          <mat-icon (click)="pageprevious()">keyboard_arrow_left</mat-icon>
+        </button>
+        <button mat-button>
+          <mat-icon (click)="pagenext()">keyboard_arrow_right</mat-icon>
+        </button>
+      </mat-card-actions>
+    </div>
+  </div>
+</div>
